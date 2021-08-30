@@ -1,0 +1,66 @@
+<div>
+    <div class="container-fluid">
+        <ul class="nav nav-tabs">
+            <li class="text-standard auth-modal-tab" ng-repeat="tab in repoView.minitabs" 
+                ng-click="repoView.miniToggleView($index)"
+                ng-class="tab.name == repoView.miniWidgetView ? 'active' : ''">
+                <a class="textColor-Performance" data-toggle="tab">{{tab.name}}</a>
+            </li>
+            </span>
+        </ul>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12"><br>
+
+                <div class="widget-body">
+                    <div class="repo-view">
+                        <div class="widget">
+                            <div class="widget-heading">
+                                Commits per day
+                            </div>
+                            <div class="widget-body">
+                                <chartist class="commit-view ct-octave dash-chart-alt" 
+                                    ng-show="repoView.isvisible" 
+                                    chartist-chart-type="Line" 
+                                    chartist-data="repoView.combinedChartData2"
+                                    chartist-chart-options="repoView.combinedChartOptions">
+                                </chartist>
+                            </div>
+                        </div>
+                        <div ng-repeat="tab in repoView.minitabs" ng-show="repoView.miniWidgetView ==  tab.name">
+                            <div class="widget-heading">
+                                Summary
+                            </div>
+                            <div class="widget-body">
+                                <table class="table repo-summary-table">
+                                    <tr>
+                                        <td style="color: #04eeff">Commits</td>
+                                        <td>{{repoView.lastDayCommitCount[tab.name]}}</td>
+                                        <td>{{repoView.lastSevenDaysCommitCount[tab.name]}}</td>
+                                        <td>{{repoView.lastFourteenDaysCommitCount[tab.name]}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Committors</td>
+                                        <td>{{repoView.lastDayCommitContributorCount[tab.name].length}}</td>
+                                        <td>{{repoView.lastSevenDaysCommitContributorCount[tab.name].length}}</td>
+                                        <td>{{repoView.lastFourteenDaysCommitContributorCount[tab.name].length}}</td>
+                                    </tr>
+                                    <tr class="totals">
+                                        <td></td>
+                                        <td>Today</td>
+                                        <td>Last<br/>7 Days</td>
+                                        <td>Last<br/>14 Days</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,30 @@
+# Help: rename the adject docker-compose.override.example.yml file to docker-compose.override.yml
+#       then in the override file uncomment the environment tag for the collectors you want to
+#       run. Then add the environment vars you want to use.
+version: '3'
+
+services:
+
+  db:
+    build: db
+    volumes:
+      - "datadb:/data/db"
+    ports:
+      - "27017:27017"
+  api:
+    build: api
+    env_file:
+    - api/config.env
+    depends_on:
+      - db
+  ui:
+    build:  ui
+    env_file:
+    - ui/config.env
+    depends_on:
+      - api
+    ports:
+      - "20000:80"
+
+volumes:
+  datadb:

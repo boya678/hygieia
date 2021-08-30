@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: #{component}#-ingress
+  namespace: #{service}#-#{business-line}#-#{project-name}#-#{env}#
+  labels:
+    app: #{component}#
+    app.bancolombia.com.co/env: "#{env}#"
+    app.bancolombia.com.co/team: "#{team}#"
+    app.bancolombia.com.co/owner: "#{owner}#"
+    app.bancolombia.com.co/cost-center: "#{cost-center}#"
+    app.bancolombia.com.co/application-code: "#{application-code}#"
+    app.bancolombia.com.co/service: "#{service}#"
+    app.bancolombia.com.co/business-line: "#{business-line}#"
+    app.bancolombia.com.co/project-name: "#{project-name}#"
+    app.bancolombia.com.co/pmo: "#{pmo}#"
+    app.bancolombia.com.co/society: "#{society}#"
+  annotations:
+    kubernetes.io/ingress.class: #{ingress-class}#
+spec:
+  rules:
+  - host: collector.hygieia.bancolombia.corp
+  - http:
+      paths:
+      - path: /#{uri}#
+        backend:
+          serviceName: #{component}#
+          servicePort: #{service-port}#
