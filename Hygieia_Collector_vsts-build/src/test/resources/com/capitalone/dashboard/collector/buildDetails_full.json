@@ -1,0 +1,138 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://grupobancolombia.visualstudio.com/b267af7c-3233-4ad1-97b3-91083943100d/_apis/build/Builds/32157"
+    },
+    "web": {
+      "href": "https://grupobancolombia.visualstudio.com/b267af7c-3233-4ad1-97b3-91083943100d/_build/results?buildId=32157"
+    },
+    "sourceVersionDisplayUri": {
+      "href": "https://grupobancolombia.visualstudio.com/b267af7c-3233-4ad1-97b3-91083943100d/_apis/build/builds/32157/sources"
+    },
+    "timeline": {
+      "href": "https://grupobancolombia.visualstudio.com/b267af7c-3233-4ad1-97b3-91083943100d/_apis/build/builds/32157/Timeline"
+    },
+    "badge": {
+      "href": "https://grupobancolombia.visualstudio.com/b267af7c-3233-4ad1-97b3-91083943100d/_apis/build/status/143"
+    }
+  },
+  "properties": {},
+  "tags": [],
+  "validationResults": [],
+  "plans": [
+    {
+      "planId": "2a3be123-4a21-48d4-8f27-fbb1629a0b56"
+    }
+  ],
+  "triggerInfo": {},
+  "id": 32157,
+  "buildNumber": "EstabilizacionRediseno.20180905.2",
+  "status": "completed",
+  "result": "succeeded",
+  "queueTime": "2018-09-05T14:54:03.253698Z",
+  "startTime": "2018-09-05T14:54:05.8173381Z",
+  "finishTime": "2018-09-05T15:22:07.7450552Z",
+  "url": "https://grupobancolombia.visualstudio.com/b267af7c-3233-4ad1-97b3-91083943100d/_apis/build/Builds/32157",
+  "definition": {
+    "drafts": [],
+    "id": 143,
+    "name": "AW0638001_SitioTransaccional_CI",
+    "url": "https://grupobancolombia.visualstudio.com/b267af7c-3233-4ad1-97b3-91083943100d/_apis/build/Definitions/143?revision=57",
+    "uri": "vstfs:///Build/Definition/143",
+    "path": "\\SitioTransaccional",
+    "type": "build",
+    "queueStatus": "enabled",
+    "revision": 57,
+    "project": {
+      "id": "b267af7c-3233-4ad1-97b3-91083943100d",
+      "name": "Vicepresidencia Servicios de Tecnología",
+      "description": "My Project",
+      "url": "https://grupobancolombia.visualstudio.com/_apis/projects/b267af7c-3233-4ad1-97b3-91083943100d",
+      "state": "wellFormed",
+      "revision": 2307,
+      "visibility": "private"
+    }
+  },
+  "buildNumberRevision": 2,
+  "project": {
+    "id": "b267af7c-3233-4ad1-97b3-91083943100d",
+    "name": "Vicepresidencia Servicios de Tecnología",
+    "description": "My Project",
+    "url": "https://grupobancolombia.visualstudio.com/_apis/projects/b267af7c-3233-4ad1-97b3-91083943100d",
+    "state": "wellFormed",
+    "revision": 2307,
+    "visibility": "private"
+  },
+  "uri": "vstfs:///Build/Build/32157",
+  "sourceBranch": "refs/heads/release/EstabilizacionRediseno",
+  "sourceVersion": "22f815b9b503375ce3927ad0cde876aaa7c5ddb0",
+  "queue": {
+    "id": 94,
+    "name": "DevOpsWindows",
+    "pool": {
+      "id": 18,
+      "name": "DevOpsWindows"
+    }
+  },
+  "priority": "normal",
+  "reason": "individualCI",
+  "requestedFor": {
+    "displayName": "Milton Ferney Vasquez Herrera",
+    "url": "https://app.vssps.visualstudio.com/Ac3a0513d-f061-427c-b611-49ec0207b97a/_apis/Identities/816c63ce-1e33-69b0-8be1-d5205cba5a60",
+    "_links": {
+      "avatar": {
+        "href": "https://grupobancolombia.visualstudio.com/_apis/GraphProfile/MemberAvatars/aad.ODE2YzYzY2UtMWUzMy03OWIwLThiZTEtZDUyMDVjYmE1YTYw"
+      }
+    },
+    "id": "816c63ce-1e33-69b0-8be1-d5205cba5a60",
+    "uniqueName": "mivasque@bancolombia.com.co",
+    "imageUrl": "https://grupobancolombia.visualstudio.com/_api/_common/identityImage?id=816c63ce-1e33-69b0-8be1-d5205cba5a60",
+    "descriptor": "aad.ODE2YzYzY2UtMWUzMy03OWIwLThiZTEtZDUyMDVjYmE1YTYw"
+  },
+  "requestedBy": {
+    "displayName": "Microsoft.VisualStudio.Services.TFS",
+    "url": "https://app.vssps.visualstudio.com/Ac3a0513d-f061-427c-b611-49ec0207b97a/_apis/Identities/00000002-0000-8888-8000-000000000000",
+    "_links": {
+      "avatar": {
+        "href": "https://grupobancolombia.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+      }
+    },
+    "id": "00000002-0000-8888-8000-000000000000",
+    "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+    "imageUrl": "https://grupobancolombia.visualstudio.com/_api/_common/identityImage?id=00000002-0000-8888-8000-000000000000",
+    "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+  },
+  "lastChangedDate": "2018-09-05T15:22:10.05Z",
+  "lastChangedBy": {
+    "displayName": "Microsoft.VisualStudio.Services.TFS",
+    "url": "https://app.vssps.visualstudio.com/Ac3a0513d-f061-427c-b611-49ec0207b97a/_apis/Identities/00000002-0000-8888-8000-000000000000",
+    "_links": {
+      "avatar": {
+        "href": "https://grupobancolombia.visualstudio.com/_apis/GraphProfile/MemberAvatars/s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+      }
+    },
+    "id": "00000002-0000-8888-8000-000000000000",
+    "uniqueName": "00000002-0000-8888-8000-000000000000@2c895908-04e0-4952-89fd-54b0046d6288",
+    "imageUrl": "https://grupobancolombia.visualstudio.com/_api/_common/identityImage?id=00000002-0000-8888-8000-000000000000",
+    "descriptor": "s2s.MDAwMDAwMDItMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDJjODk1OTA4LTA0ZTAtNDk1Mi04OWZkLTU0YjAwNDZkNjI4OA"
+  },
+  "orchestrationPlan": {
+    "planId": "2a3be123-4a21-48d4-8f27-fbb1629a0b56"
+  },
+  "logs": {
+    "id": 0,
+    "type": "Container",
+    "url": "https://grupobancolombia.visualstudio.com/b267af7c-3233-4ad1-97b3-91083943100d/_apis/build/builds/32157/logs"
+  },
+  "repository": {
+    "id": "df4dfc02-7969-4274-9801-0f973968e2b0",
+    "type": "TfsGit",
+    "name": "AW0638001_SitioTransaccional",
+    "url": "https://grupobancolombia.visualstudio.com/Vicepresidencia%20Servicios%20de%20Tecnolog%C3%ADa/_git/AW0638001_SitioTransaccional",
+    "clean": null,
+    "checkoutSubmodules": false
+  },
+  "keepForever": false,
+  "retainedByRelease": false,
+  "triggeredByBuild": null
+}

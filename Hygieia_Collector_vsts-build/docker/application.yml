@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: #{service}#
+  namespace: #{namespace}#
+  labels:
+    app.bancolombia.com.co/env: #{env}#
+    app.bancolombia.com.co/cost-center: #{cost-center}#
+    app.bancolombia.com.co/application-code: #{application-code}#
+    app.bancolombia.com.co/project: #{project-name}#
+    app.bancolombia.com.co/pmo: #{pmo}#
+spec:
+  selector:
+    app: #{project-name}#
+    pod: #{service}#-pod
+  ports:
+    - name: http
+      targetPort: #{container-port}#
+      port: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: #{service}#-deployment
+  namespace: #{namespace}#
+  labels:
+    app.bancolombia.com.co/env: #{env}#
+    app.bancolombia.com.co/cost-center: #{cost-center}#
+    app.bancolombia.com.co/application-code: #{application-code}#
+    app.bancolombia.com.co/project: #{project-name}#
+    app.bancolombia.com.co/pmo: #{pmo}#
+spec:
+  replicas: #{replicas}#
+  selector:
+    matchLabels:
+      pod: #{service}#-pod
+  template:
+    metadata:
+      labels:
+        app: #{project-name}#
+        pod: #{service}#-pod
+        app.bancolombia.com.co/project: #{project-name}#
+        version: #{version}#
+    spec:
+      containers:
+      - name: #{component}#
+        image: #{image}#
+        ports:
+        - name: http
+          containerPort: #{container-port}#
+        resources:
+          limits:
+            cpu: "#{LIMIT_CPU}#"
+            memory: "#{LIMIT_MEMORY}#"
+          requests:
+            cpu: "#{REQUEST_CPU}#"
+            memory: "#{REQUEST_MEMORY}#"       
+        env:
+        - name: MONGODB_HOST
+          value: "#{IP_MONGODB}#"
+        - name: VSTS_BUILD_CRON
+          value: "0 0/2 * * * *"
+        - name: logging.file
+          value: "/dev/stdout"
+        - name: VSTS_API_TOKEN
+          value: #{TOKEN_VSTS}#
+        - name: VSTS_SERVER
+          value: "https://grupobancolombia.visualstudio.com/Vicepresidencia%20Servicios%20de%20Tecnolog%C3%ADa"

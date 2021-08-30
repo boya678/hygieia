@@ -1,0 +1,34 @@
+<widget-modal widget-modal-title="Configure Code Repo Widget">
+	<form name="configForm"
+		ng-submit="repoConfig.submit(configForm)"
+		novalidate="novalidate">
+
+		<form-group 
+				input="repositoryCollectorItem"
+				class="text-center"
+				errors="{required:'Repo Name is required'}">
+
+			<label class="modal-label">Repo Name</label>
+			<input 
+				type="text" 
+				name="repositoryCollectorItem" 
+				class="form-control" 
+				placeholder="Search a Repository Job"
+				ng-model="repoConfig.repositoryCollectorItem" 
+				uib-typeahead="item as item.description for item in getRepositoryCollectors($viewValue)"
+				typeahead-focus typeahead-template-url="repoAdoptionUrlTemplate.html" 
+				typeahead-wait-ms="250" autocomplete="off" 
+				typeahead-min-length="1"
+				typeahead-no-results="noResults" required>
+			</form-group>
+		<hr/>
+		<div class="button-row row text-center">
+			<button type="submit" class="btn btn-primary btn-wide">Save</button>
+		</div>
+	</form>
+</widget-modal>
+<script type="text/ng-template" id="repoAdoptionUrlTemplate.html">
+	<a title={{match.model.description}}>
+		<span ng-bind-html="match.label | uibTypeaheadHighlight:query"/> 
+	</a>
+</script>
