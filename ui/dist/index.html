@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="no-js" ng-app="hygieia-dashboard">
+<head>
+    <meta charset="utf-8">
+    <title>Hygieia Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <script>
+        var HygieiaConfig = {"module":"hygieia-dashboard","refresh":60};
+    </script>
+</head>
+<body>
+
+<div id="container" class="screen-fade" ui-view></div>
+
+
+
+<!-- bower:js -->
+<script src="node_modules/jquery.min.js"></script>
+<script src="node_modules/jquery-ui.js"></script>
+<script src="node_modules/angular.js"></script>
+<script src="node_modules/angular-animate.min.js"></script>
+<script src="node_modules/Chart.min.js"></script>
+<script src="node_modules/angular-chart.js"></script>
+<script src="node_modules/chartist.js"></script>
+<script src="node_modules/angular-chartist.js"></script>
+<script src="node_modules/angular-cookies.min.js"></script>
+<script src="node_modules/angular-jwt.min.js"></script>
+<script src="node_modules/angular-mocks.js"></script>
+<script src="node_modules/ng-rateit.min.js"></script>
+<script src="node_modules/angular-sanitize.min.js"></script>
+<script src="node_modules/angular-tablesort.js"></script>
+<script src="node_modules/ui-bootstrap-tpls.js"></script>
+<script src="node_modules/angular-ui-router.js"></script>
+<script src="node_modules/dirPagination.js"></script>
+<script src="node_modules/angular-validation-match.min.js"></script>
+<script src="node_modules/sweet-alert.js"></script>
+<script src="node_modules/underscore.js"></script>
+<script src="node_modules/underscore-min.js"></script>
+<script src="node_modules/lodash.js"></script>
+<script src="node_modules/Dexie.js"></script>
+<script src="node_modules/logic.js"></script>
+<script src="node_modules/jstz.min.js"></script>
+<script src="node_modules/moment.js"></script>
+<script src="node_modules/ng-sortable.min.js"></script>
+<script src="node_modules/operative.min.js"></script>
+<script src="node_modules/regression.js"></script>
+<script src="node_modules/select.min.js"></script>
+<!-- endinject -->
+
+
+<!-- hygieia:js -->
+<script src="app/app.js"></script>
+<script src="app/dashboard/core/module.js"></script>
+<script src="app/chartist/plugins/axisLabels.js"></script>
+<script src="app/chartist/plugins/axisTitle.js"></script>
+<script src="app/chartist/plugins/gridBoundaries.js"></script>
+<script src="app/chartist/plugins/lineAboveArea.js"></script>
+<script src="app/chartist/plugins/pointClick.js"></script>
+<script src="app/chartist/plugins/pointHalo.js"></script>
+<script src="app/chartist/plugins/pointlabels.js"></script>
+<script src="app/chartist/plugins/threshold.js"></script>
+<script src="app/chartist/plugins/tooltip.js"></script>
+<script src="app/dashboard/controllers/addFeatureFlags.js"></script>
+<script src="app/dashboard/controllers/addServiceAccount.js"></script>
+<script src="app/dashboard/controllers/admin.js"></script>
+<script src="app/dashboard/controllers/createDashboard.js"></script>
+<script src="app/dashboard/controllers/dashboard.js"></script>
+<script src="app/dashboard/controllers/editApiToken.js"></script>
+<script src="app/dashboard/controllers/editDashboard.js"></script>
+<script src="app/dashboard/controllers/editServiceAccount.js"></script>
+<script src="app/dashboard/controllers/editTemplate.js"></script>
+<script src="app/dashboard/controllers/generateApiToken.js"></script>
+<script src="app/dashboard/controllers/login.js"></script>
+<script src="app/dashboard/controllers/scoreComponentDetails.js"></script>
+<script src="app/dashboard/controllers/scoreView.js"></script>
+<script src="app/dashboard/controllers/signup.js"></script>
+<script src="app/dashboard/controllers/site.js"></script>
+<script src="app/dashboard/controllers/templateDetails.js"></script>
+<script src="app/dashboard/controllers/templateManager.js"></script>
+<script src="app/dashboard/controllers/widgetConfigManager.js"></script>
+<script src="app/dashboard/core/data-factories/branches-data.js"></script>
+<script src="app/dashboard/core/data-factories/build-data.js"></script>
+<script src="app/dashboard/core/data-factories/chatops-data.js"></script>
+<script src="app/dashboard/core/data-factories/cicd-gates-data.js"></script>
+<script src="app/dashboard/core/data-factories/cloud-data.js"></script>
+<script src="app/dashboard/core/data-factories/cmdb-data.js"></script>
+<script src="app/dashboard/core/data-factories/code-analysis-data.js"></script>
+<script src="app/dashboard/core/data-factories/code-repo-data.js"></script>
+<script src="app/dashboard/core/data-factories/collector-data.js"></script>
+<script src="app/dashboard/core/data-factories/dashboard-data.js"></script>
+<script src="app/dashboard/core/data-factories/deploy-data.js"></script>
+<script src="app/dashboard/core/data-factories/feature-data.js"></script>
+<script src="app/dashboard/core/data-factories/feature-flags-data.js"></script>
+<script src="app/dashboard/core/data-factories/issue-repo-data.js"></script>
+<script src="app/dashboard/core/data-factories/library-policy-data.js"></script>
+<script src="app/dashboard/core/data-factories/log-data.js"></script>
+<script src="app/dashboard/core/data-factories/login-data.js"></script>
+<script src="app/dashboard/core/data-factories/monitor-data.js"></script>
+<script src="app/dashboard/core/data-factories/performance-data.js"></script>
+<script src="app/dashboard/core/data-factories/pipeline-data.js"></script>
+<script src="app/dashboard/core/data-factories/pull-repo-data.js"></script>
+<script src="app/dashboard/core/data-factories/rally-data.js"></script>
+<script src="app/dashboard/core/data-factories/score-data.js"></script>
+<script src="app/dashboard/core/data-factories/service-account-data.js"></script>
+<script src="app/dashboard/core/data-factories/session.js"></script>
+<script src="app/dashboard/core/data-factories/signup-data.js"></script>
+<script src="app/dashboard/core/data-factories/team-data.js"></script>
+<script src="app/dashboard/core/data-factories/templateManager-data.js"></script>
+<script src="app/dashboard/core/data-factories/test-suite-data.js"></script>
+<script src="app/dashboard/core/data-factories/user-data.js"></script>
+<script src="app/dashboard/core/extensions/moment.dash.js"></script>
+<script src="app/dashboard/core/extensions/ng-fitText.js"></script>
+<script src="app/dashboard/core/providers/widget-manager.js"></script>
+<script src="app/dashboard/directives/api-status.js"></script>
+<script src="app/dashboard/directives/cicd-gates-modal.js"></script>
+<script src="app/dashboard/directives/commit-blocks.js"></script>
+<script src="app/dashboard/directives/dash-edit.js"></script>
+<script src="app/dashboard/directives/dash-status.js"></script>
+<script src="app/dashboard/directives/dash-trash.js"></script>
+<script src="app/dashboard/directives/date-picker.js"></script>
+<script src="app/dashboard/directives/deleteConfirm.js"></script>
+<script src="app/dashboard/directives/form-group.js"></script>
+<script src="app/dashboard/directives/hideEmpty.js"></script>
+<script src="app/dashboard/directives/login-form.js"></script>
+<script src="app/dashboard/directives/popover-html-unsafe.js"></script>
+<script src="app/dashboard/directives/score-settings.js"></script>
+<script src="app/dashboard/directives/score-view-header.js"></script>
+<script src="app/dashboard/directives/score-view-widget.js"></script>
+<script src="app/dashboard/directives/select-on-click.js"></script>
+<script src="app/dashboard/directives/typeahead-focus.js"></script>
+<script src="app/dashboard/directives/widget-container.js"></script>
+<script src="app/dashboard/directives/widget-modal.js"></script>
+<script src="app/dashboard/directives/widget-placeholder.js"></script>
+<script src="app/dashboard/directives/widget-score.js"></script>
+<script src="app/dashboard/directives/widget.js"></script>
+<script src="app/dashboard/filters/duration.js"></script>
+<script src="app/dashboard/filters/from-now.js"></script>
+<script src="app/dashboard/filters/trunc-text.js"></script>
+<script src="app/dashboard/services/authInterceptor.js"></script>
+<script src="app/dashboard/services/authService.js"></script>
+<script src="app/dashboard/services/dashboardValidationService.js"></script>
+<script src="app/dashboard/services/loginRedirectService.js"></script>
+<script src="app/dashboard/services/paginationWrapperService.js"></script>
+<script src="app/dashboard/services/scoreDataService.js"></script>
+<script src="app/dashboard/services/tokenService.js"></script>
+<script src="app/dashboard/services/userService.js"></script>
+<script src="components/templates/capone.js"></script>
+<script src="components/templates/cloud.js"></script>
+<script src="components/templates/customTemplate.js"></script>
+<script src="components/templates/deleteWidgetTemplate.js"></script>
+<script src="components/templates/widgetsTemplate.js"></script>
+<script src="components/widgets/build/config.js"></script>
+<script src="components/widgets/build/detail.js"></script>
+<script src="components/widgets/build/directives/directives.js"></script>
+<script src="components/widgets/build/module.js"></script>
+<script src="components/widgets/build/view.js"></script>
+<script src="components/widgets/chatops/config.js"></script>
+<script src="components/widgets/chatops/module.js"></script>
+<script src="components/widgets/chatops/view.js"></script>
+<script src="components/widgets/cloud/config.js"></script>
+<script src="components/widgets/cloud/module.js"></script>
+<script src="components/widgets/cloud/subnetController.js"></script>
+<script src="components/widgets/cloud/subnetDetail.js"></script>
+<script src="components/widgets/cloud/subnetUtilization.js"></script>
+<script src="components/widgets/cloud/view.js"></script>
+<script src="components/widgets/codeanalysis/config.js"></script>
+<script src="components/widgets/codeanalysis/directives/guage-container.js"></script>
+<script src="components/widgets/codeanalysis/librarypolicydetails.js"></script>
+<script src="components/widgets/codeanalysis/module.js"></script>
+<script src="components/widgets/codeanalysis/testdetails.js"></script>
+<script src="components/widgets/codeanalysis/testList.js"></script>
+<script src="components/widgets/codeanalysis/view.js"></script>
+<script src="components/widgets/deploy/config.js"></script>
+<script src="components/widgets/deploy/detail.js"></script>
+<script src="components/widgets/deploy/module.js"></script>
+<script src="components/widgets/deploy/view.js"></script>
+<script src="components/widgets/feature/config.js"></script>
+<script src="components/widgets/feature/module.js"></script>
+<script src="components/widgets/feature/view.js"></script>
+<script src="components/widgets/log/config.js"></script>
+<script src="components/widgets/log/module.js"></script>
+<script src="components/widgets/log/view.js"></script>
+<script src="components/widgets/monitor/config.js"></script>
+<script src="components/widgets/monitor/module.js"></script>
+<script src="components/widgets/monitor/view.js"></script>
+<script src="components/widgets/monitor2/config.js"></script>
+<script src="components/widgets/monitor2/module.js"></script>
+<script src="components/widgets/monitor2/view.js"></script>
+<script src="components/widgets/performance/config.js"></script>
+<script src="components/widgets/performance/detail.js"></script>
+<script src="components/widgets/performance/directives/guage-container.js"></script>
+<script src="components/widgets/performance/module.js"></script>
+<script src="components/widgets/performance/view.js"></script>
+<script src="components/widgets/pipeline/config.js"></script>
+<script src="components/widgets/pipeline/module.js"></script>
+<script src="components/widgets/pipeline/view.js"></script>
+<script src="components/widgets/product/add-team/addTeam.js"></script>
+<script src="components/widgets/product/cicd-gates/cicd-gates.js"></script>
+<script src="components/widgets/product/directives/directives.js"></script>
+<script src="components/widgets/product/edit-team/editTeam.js"></script>
+<script src="components/widgets/product/environment-commits/environmentCommits.js"></script>
+<script src="components/widgets/product/js/build-data.js"></script>
+<script src="components/widgets/product/js/code-analysis-data.js"></script>
+<script src="components/widgets/product/js/commit-data.js"></script>
+<script src="components/widgets/product/js/security-analysis-data.js"></script>
+<script src="components/widgets/product/js/test-suite-data.js"></script>
+<script src="components/widgets/product/module.js"></script>
+<script src="components/widgets/product/quality-details/qualityDetails.js"></script>
+<script src="components/widgets/product/view.js"></script>
+<script src="components/widgets/rally/config.js"></script>
+<script src="components/widgets/rally/graphDetail.js"></script>
+<script src="components/widgets/rally/module.js"></script>
+<script src="components/widgets/rally/rallyBuildDetail.js"></script>
+<script src="components/widgets/rally/view.js"></script>
+<script src="components/widgets/repo/config.js"></script>
+<script src="components/widgets/repo/detail.js"></script>
+<script src="components/widgets/repo/module.js"></script>
+<script src="components/widgets/repo/view.js"></script>
+<script src="components/widgets/team/config.js"></script>
+<script src="components/widgets/team/module.js"></script>
+<script src="components/widgets/team/view.js"></script>
+<script src="etc/gridstack-angular.js"></script>
+<!-- endinject -->
+
+<script src="template-cache.js"></script>
+</body>
+</html>
