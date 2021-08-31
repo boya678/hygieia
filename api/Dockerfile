@@ -2,6 +2,8 @@ FROM openjdk:8-jre
 
 VOLUME ["/hygieia/logs"]
 
+RUN mkdir /hygieia
+
 RUN mkdir /hygieia/config
 
 EXPOSE 8080

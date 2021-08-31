@@ -54,7 +54,7 @@ feature.dynamicPipeline=${FEATURE_DYNAMIC_PIPELINE:-disabled}
 # JWT expiration time in milliseconds
 auth.expirationTime=${AUTH_EXPIRATION_TIME:-60000000}
 # Secret Key used to validate the JWT tokens
-# auth.secret=${AUTH_SECRET:-hygieiasecret}
+# auth.secret=${AUTH_SECRET:-muchascosas}
 auth.authenticationProviders=${AUTH_AUTHENTICATION_PROVIDERS:-STANDARD}
 
 # LDAP Server Url, including port of your LDAP server
