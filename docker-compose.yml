@@ -4,27 +4,22 @@
 version: '3'
 
 services:
-
   db:
     build: db
-    volumes:
-      - "datadb:/data/db"
     ports:
       - "27017:27017"
   api:
-    build: api
+    image: thoughtworksindia/hygieia-api
     env_file:
     - api/config.env
     depends_on:
       - db
   ui:
-    build:  ui
+    image: thoughtworksindia/hygieia-ui
     env_file:
     - ui/config.env
     depends_on:
       - api
     ports:
-      - "20000:80"
+      - "8090:80"
 
-volumes:
-  datadb:
